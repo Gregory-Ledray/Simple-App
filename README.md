@@ -9,7 +9,7 @@ This is a simple application which can be deployed to AWS. It is meant to demons
 * You can run the resulting executable file. Navigate to your PORT-environment configured variable or localhost:8080 and view the application.
 
 ## Continuous Integration and Deployment
-When a new release is tagged in Github the application is deployed to AWS automatically. TODO
+When a new release is tagged in Github the application is deployed to AWS automatically. TO TEST
 
 ### Deploy into a new environment
 * To create a new environment, run the following script: TODO
