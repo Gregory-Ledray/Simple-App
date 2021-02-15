@@ -7,6 +7,15 @@ import (
 	"os"
 )
 
+func main() {
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+	}
+	http.HandleFunc("/", sayHello)
+	log.Fatal(http.ListenAndServe(":" + port, nil))
+}
+
 // sayHello responds to a request with a webpage that says "Hello" and links to an additional request.
 //
 // Note: It is bad security practice to reply to a response with error information. However the service I am building
@@ -23,13 +32,4 @@ func sayHello(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "Could not write to the response writer: " + err.Error(), http.StatusInternalServerError)
 		return
 	}
-}
-
-func main() {
-	port := os.Getenv("PORT")
-	if port == "" {
-		port = "8080"
-	}
-	http.HandleFunc("/", sayHello)
-	log.Fatal(http.ListenAndServe(":" + port, nil))
 }
