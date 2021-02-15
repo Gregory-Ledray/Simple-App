@@ -1,5 +1,6 @@
 {
   "family": "simple-app",
+  "executionRoleArn":  "${data.aws_iam_role.ecs_task_execution_role.arn}",
   "networkMode": "awsvpc",
   "containerDefinitions": [
     {
